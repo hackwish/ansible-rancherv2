@@ -2,7 +2,7 @@
 - name: pull Rancher/server container
   docker_image:
     name: rancher/rancher
-  when: dropbox_installed is success
+  when: docker_installed is success
 
 - name: Create mount volume directories for persistent rancher server data
   file: path={{ item.path }} state=directory mode="a+rw"
